@@ -114,11 +114,11 @@
   tags:
     - kube-proxy
 
-- name: Modprobe nf_conntrack
+- name: Modprobe nf_conntrack_ipv4
   modprobe:
-    name: nf_conntrack
+    name: nf_conntrack_ipv4
     state: present
-  register: modprobe_nf_conntrack
+  register: modprobe_nf_conntrack_ipv4
   ignore_errors: true  # noqa ignore-errors
   when:
     - kube_proxy_mode == 'ipvs'
@@ -134,8 +134,8 @@
       ip_vs_rr
       ip_vs_wrr
       ip_vs_sh
-      {% if modprobe_nf_conntrack is success -%}
-      nf_conntrack
+      {% if modprobe_nf_conntrack_ipv4 is success -%}
+      nf_conntrack_ipv4
       {%-   endif -%}
   when: kube_proxy_mode == 'ipvs'
   tags:
