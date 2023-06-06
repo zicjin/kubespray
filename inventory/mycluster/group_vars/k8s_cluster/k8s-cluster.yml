@@ -23,7 +23,7 @@ kube_version: v1.26.5
 # Note: ensure that you've enough disk space (about 1G)
 local_release_dir: "/tmp/releases"
 # Random shifts for retrying failed ops like pushing/downloading
-retry_stagger: 5
+retry_stagger: 10
 
 # This is the user that owns tha cluster installation.
 kube_owner: kube
