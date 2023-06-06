@@ -188,6 +188,7 @@
 
 - name: reset | unmount kubelet dirs  # noqa 301
   command: umount -f {{ item }}
+  ignore_errors: true
   with_items: "{{ mounted_dirs.stdout_lines }}"
   register: umount_dir
   when: mounted_dirs
