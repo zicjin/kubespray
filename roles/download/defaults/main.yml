@@ -1040,11 +1040,11 @@ coredns_image_repo: "{{ kube_image_repo }}/coredns"
 coredns_image_tag: "{{ coredns_version if (coredns_image_is_namespaced | bool) else (coredns_version | regex_replace('^v', '')) }}"
 
 nodelocaldns_version: "1.22.18"
-nodelocaldns_image_repo: "registry.cn-shanghai.aliyuncs.com/kube_image_repo/k8s-dns-node-cache"
+nodelocaldns_image_repo: "anjia0532/google-containers.dns.k8s-dns-node-cache"
 nodelocaldns_image_tag: "{{ nodelocaldns_version }}"
 
 dnsautoscaler_version: v1.8.8
-dnsautoscaler_image_repo: "registry.cn-shanghai.aliyuncs.com/kube_image_repo/cluster-proportional-autoscaler"
+dnsautoscaler_image_repo: "anjia0532/google-containers.cpa.cluster-proportional-autoscaler"
 dnsautoscaler_image_tag: "{{ dnsautoscaler_version }}"
 
 registry_version: "2.8.1"
